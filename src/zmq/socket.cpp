@@ -39,7 +39,7 @@ static constexpr int32_t zmq_true = 1;
 static constexpr int32_t zmq_false = 0;
 static constexpr int32_t zmq_fail = -1;
 static constexpr int32_t reconnect_interval = 100;
-static const bc::protocol::settings default_settings;
+static  bc::protocol::settings default_settings;
 
 // Linger
 // The default value of -1 specifies an infinite linger period. Pending
@@ -110,7 +110,7 @@ socket::socket(context& context, role socket_role)
 }
 
 // This design presumes no setting value should be able to cause failure.
-socket::socket(context& context, role socket_role, const settings& settings)
+socket::socket(context& context, role socket_role,  settings& settings)
   : socket(zmq_socket(context.self(), to_socket_type(socket_role)))
 {
     if (self_ == nullptr)

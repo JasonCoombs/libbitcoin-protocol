@@ -71,7 +71,7 @@ public:
 
     /// Construct a socket of the given context and role.
     /// Subscribers are automatically subscribed to all messages.
-    socket(context& context, role socket_role, const settings& settings);
+    socket(context& context, role socket_role,  settings& settings);
 
     /// Close the socket.
     virtual ~socket();
